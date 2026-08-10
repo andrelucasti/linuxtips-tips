@@ -12,7 +12,12 @@ jobs:
         run: cat /etc/os-release
       
       - name: Who're u ?
-        run: echo "Who are you ?" | uname -r
+        run: echo "Who are you ?" && uname -r
       
       - name: I'am 
-        run: uname 
+        run: | 
+          name=uname
+          iam="I am "
+          version=uname -r
+          result= ${iam} ${name} ${version}
+          echo ${result}
