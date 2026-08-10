@@ -16,8 +16,8 @@ jobs:
       
       - name: I'am 
         run: | 
-          name=uname
+          name=$(uname)
           iam="I am "
-          version=uname -r
-          result= ${iam} ${name} ${version}
+          version=$(uname -r)
+          result="${iam} ${name} ${version}"
           echo ${result}
