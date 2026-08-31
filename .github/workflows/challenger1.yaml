@@ -1,0 +1,26 @@
+name: Linuxtips challenger 1
+
+on: 
+  workflow_dispatch:
+    inputs:
+      image:
+        description: 'Image name'
+        type: 'string'
+        required: true
+      
+      tag:
+        description: 'Tag name'
+        default: latest
+        type: 'string'
+        required: true
+
+
+
+jobs:
+  earth:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull docker image
+        run: docker pull {{$inputs.image:$inputs.tag}}
+      
+    
