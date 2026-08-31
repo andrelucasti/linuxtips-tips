@@ -20,7 +20,9 @@ jobs:
   earth:
     runs-on: ubuntu-latest
     steps:
+      - name: Image to be pulled
+        run: echo {{ $inputs.image:$inputs.tag }}
       - name: Pull docker image
-        run: docker pull {{ $inputs.image:$inputs.tag }}
+        run: docker image pull {{ $inputs.image:$inputs.tag }}
       
     
