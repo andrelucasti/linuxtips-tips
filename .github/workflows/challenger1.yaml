@@ -1,4 +1,4 @@
-name: Linuxtips challenger 1
+name: Linuxtips challenge 1
 
 on: 
   workflow_dispatch:
@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Pull docker image
-        run: docker pull {{$inputs.image:$inputs.tag}}
+        run: docker pull {{ $inputs.image:$inputs.tag }}
       
     
