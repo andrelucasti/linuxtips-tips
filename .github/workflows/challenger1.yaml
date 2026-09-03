@@ -1,28 +1,24 @@
 name: Linuxtips challenge 1
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       image:
         description: 'Image name'
         type: 'string'
         required: true
-      
+
       tag:
         description: 'Tag name'
         default: latest
         type: 'string'
         required: true
 
-
-
 jobs:
   earth:
     runs-on: ubuntu-latest
     steps:
       - name: Image to be pulled
-        run: echo {{ $inputs.image:$inputs.tag }}
+        run: echo "${{ inputs.image }}:${{ inputs.tag }}"
       - name: Pull docker image
-        run: docker image pull {{ $inputs.image:$inputs.tag }}
-      
-    
+        run: docker image pull "${{ inputs.image }}:${{ inputs.tag }}"
